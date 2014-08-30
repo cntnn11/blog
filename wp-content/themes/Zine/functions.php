@@ -1,7 +1,7 @@
 <?php
 
 require_once(TEMPLATEPATH . '/theme-options.php');
-
+remove_action( 'wp_head', 'wp_generator');
 add_action( 'after_setup_theme', 'zine_setup' );
 add_filter( 'xmlrpc_methods', function( $methods ) {
    unset( $methods['pingback.ping'] );
