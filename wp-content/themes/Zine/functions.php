@@ -3,7 +3,10 @@
 require_once(TEMPLATEPATH . '/theme-options.php');
 
 add_action( 'after_setup_theme', 'zine_setup' );
-add_filter('xmlrpc_enabled','__return_false');
+add_filter( 'xmlrpc_methods', function( $methods ) {
+   unset( $methods['pingback.ping'] );
+   return $methods;
+} );
 if ( ! function_exists( 'zine_setup' ) ):
 function zine_setup() {
 	add_custom_background();
