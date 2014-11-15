@@ -12,7 +12,6 @@
  * @var bool
  */
 define('WP_USE_THEMES', true);
-// 我又修改了
-/** Loads the WordPress Environment and Template */
-require('./wp-blog-header.php');
 
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
